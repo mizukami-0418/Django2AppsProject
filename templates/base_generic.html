@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}2APP Site{% endblock %}</title>
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body class='vh-100'>
+    <header class="bg-light p-3">
+        <h1><a href="{% url 'home' %}">HOME</a> | <a href="{% url 'author-list' %}">Authors</a> | <a href="{% url 'book-list' %}">Books</a></h1>
+    </header>
+    <hr>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <hr>
+    <div class="fixed-bottom">
+        <footer class="bg-dark text-white text-center p-3">
+            <p>&copy; 2024 2APP Site</p>
+        </footer>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
